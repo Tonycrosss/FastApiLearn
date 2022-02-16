@@ -1,6 +1,10 @@
 from pydantic import BaseModel
 from datetime import date
+from typing import List
 
+
+class Genre(BaseModel):
+    name: str
 
 class Book(BaseModel):
     title: str
@@ -8,4 +12,5 @@ class Book(BaseModel):
     duration: str
     date: date
     summary: str
-    genres: str = None
+    genres: List[Genre]
+    pages: int
