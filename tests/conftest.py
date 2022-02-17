@@ -9,12 +9,20 @@ class APIClient:
 
     def post(self, path="/", params=None, data=None, headers=None):
         url = self.base_address + path
-        print(f"POST request to {url}")
         return httpx.post(url=url, params=params, data=data, headers=headers)
 
     def get(self, path="/", params=None):
         url = self.base_address + path
         return httpx.get(url=url, params=params)
+
+
+def pytest_addoption(parser):
+    parser.addoption(
+        "--url",
+        action="store",
+        default="http://127.0.0.1:8080",
+        help="This is request url"
+    )
 
 
 @pytest.fixture(scope="session")
