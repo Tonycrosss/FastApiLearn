@@ -1,9 +1,6 @@
 import json
-
 import pytest
-import httpx
 from typing import List
-
 from schemas import Book
 
 
@@ -19,6 +16,7 @@ def test_get_book(api_client, q: List[str]):
     print(f"Expected result was {expected_result} an the fact result is {fact_result}")
     assert expected_result == fact_result
 
+
 test_book_dict = {
     "title": "Magic",
     "writer": "string",
@@ -32,6 +30,7 @@ test_book_dict = {
     ],
     "pages": 1
 }
+
 
 @pytest.mark.parametrize('item', [test_book_dict])
 def test_create_book(api_client, item: Book):
