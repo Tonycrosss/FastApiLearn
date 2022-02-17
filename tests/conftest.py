@@ -7,9 +7,9 @@ class APIClient:
     def __init__(self, base_address):
         self.base_address = base_address
 
-    def post(self, path="/", params=None, data=None, headers=None):
+    def post(self, path="/", params=None, content=None, headers=None):
         url = self.base_address + path
-        return httpx.post(url=url, params=params, data=data, headers=headers)
+        return httpx.post(url=url, params=params, content=content, headers=headers)
 
     def get(self, path="/", params=None):
         url = self.base_address + path

@@ -1,7 +1,7 @@
 import json
 import pytest
 from typing import List
-from schemas import Book
+from models.schemas import Book
 
 
 @pytest.mark.smoke_test
@@ -36,7 +36,7 @@ test_book_dict = {
 def test_create_book(api_client, item: Book):
     res = api_client.post(
         path='/book',
-        data=json.dumps(item)
+        content=json.dumps(item)
     )
     expected_result = item
     actual_result = res.json()

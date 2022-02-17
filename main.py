@@ -1,7 +1,7 @@
 from typing import List
 
 from fastapi import FastAPI, Query, Path
-from schemas import Book
+from models.schemas import Book
 
 app = FastAPI()
 

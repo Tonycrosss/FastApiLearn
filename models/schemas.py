@@ -6,6 +6,7 @@ from typing import List
 class Genre(BaseModel):
     name: str
 
+
 class Book(BaseModel):
     title: str
     writer: str
